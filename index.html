@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Best Ways to Customize Your Minecraft Roleplay with Jenny Mod</title>
+    <meta name="description" content="Discover the best ways to customize your Minecraft roleplay with Jenny Mod — from character spawns and world design to emotional arcs and evolving dialogue missions.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --mag: #d63af9;
+            --purp: #8b2fc9;
+            --pink: #f94090;
+            --bg: #0d0510;
+            --surface: #160b22;
+            --surface2: #1e1030;
+            --border: #2d1545;
+            --text: #c8b0e0;
+            --text-dim: #7a5a9a;
+        }
+        body {
+            font-family: 'Outfit', 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            background: linear-gradient(90deg, var(--purp), var(--mag), var(--pink));
+            height: 4px;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-logo {
+            font-weight: 900;
+            font-size: 1.1em;
+            background: linear-gradient(90deg, var(--mag), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .site-tag {
+            font-size: 0.8em;
+            color: var(--text-dim);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* HERO — FULL BLEED GRADIENT */
+        .hero {
+            background: radial-gradient(ellipse at 30% 50%, rgba(139,47,201,0.35) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 30%, rgba(214,58,249,0.2) 0%, transparent 55%),
+                        radial-gradient(ellipse at 60% 90%, rgba(249,64,144,0.15) 0%, transparent 50%),
+                        var(--bg);
+            padding: 90px 40px 80px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--mag);
+            margin-bottom: 24px;
+        }
+        .hero-eyebrow::before, .hero-eyebrow::after {
+            content: '';
+            width: 28px; height: 1px;
+            background: var(--mag);
+            opacity: 0.5;
+        }
+        .hero h1 {
+            font-size: 3.2em;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto 22px;
+        }
+        .hero h1 .accent {
+            background: linear-gradient(90deg, var(--mag), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 1.1em;
+            color: var(--text-dim);
+            max-width: 560px;
+            margin: 0 auto 40px;
+        }
+        .hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .pill {
+            background: rgba(214,58,249,0.1);
+            border: 1px solid rgba(214,58,249,0.25);
+            color: var(--mag);
+            font-size: 0.82em;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 50px;
+        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2em; } .hero { padding: 60px 24px; } }
+
+        /* MAIN */
+        .main { max-width: 1060px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        /* DIVIDER */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 52px 0 32px;
+        }
+        .divider-icon { font-size: 1.4em; }
+        .divider-text {
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--mag);
+        }
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        /* GLASS CARD */
+        .glass {
+            background: linear-gradient(135deg, rgba(30,16,48,0.9), rgba(22,11,34,0.95));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 44px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--mag), transparent);
+            opacity: 0.5;
+        }
+        .glass h2 {
+            font-size: 1.75em;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .glass h2 .tag {
+            font-size: 0.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--mag);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .glass h3 {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--mag);
+            margin: 24px 0 10px;
+        }
+        .glass p {
+            font-size: 1.03em;
+            color: var(--text);
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        @media (max-width: 768px) { .glass { padding: 24px; } }
+
+        /* ROLEPLAY CATEGORY GRID */
+        .rp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+        .rp-card {
+            border-radius: 12px;
+            padding: 26px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .rp-card:nth-child(1) { background: linear-gradient(135deg, rgba(214,58,249,0.15), rgba(139,47,201,0.1)); border: 1px solid rgba(214,58,249,0.25); }
+        .rp-card:nth-child(2) { background: linear-gradient(135deg, rgba(249,64,144,0.15), rgba(214,58,249,0.08)); border: 1px solid rgba(249,64,144,0.25); }
+        .rp-card:nth-child(3) { background: linear-gradient(135deg, rgba(139,47,201,0.15), rgba(249,64,144,0.08)); border: 1px solid rgba(139,47,201,0.25); }
+        .rp-card:nth-child(4) { background: linear-gradient(135deg, rgba(100,50,200,0.15), rgba(214,58,249,0.08)); border: 1px solid rgba(100,50,200,0.25); }
+        .rp-icon { font-size: 2.2em; margin-bottom: 12px; }
+        .rp-label {
+            font-weight: 900;
+            font-size: 1em;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .rp-desc { font-size: 0.88em; color: var(--text-dim); line-height: 1.5; }
+
+        /* TECHNIQUE BLOCKS */
+        .technique-list { margin: 24px 0; }
+        .technique {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+        .technique:last-child { border-bottom: none; }
+        .tech-num {
+            min-width: 36px; height: 36px;
+            background: linear-gradient(135deg, var(--mag), var(--purp));
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900;
+            font-size: 0.9em;
+            color: #fff;
+            margin-top: 3px;
+        }
+        .tech-body { flex: 1; }
+        .tech-title {
+            font-weight: 800;
+            color: #fff;
+            font-size: 1.05em;
+            margin-bottom: 6px;
+        }
+        .tech-desc { font-size: 0.96em; color: var(--text-dim); line-height: 1.6; }
+
+        /* SCENARIO CARDS */
+        .scenario-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 28px 0;
+        }
+        @media (max-width: 640px) { .scenario-row { grid-template-columns: 1fr; } }
+        .scenario-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 22px;
+        }
+        .sc-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .sc-icon { font-size: 1.5em; }
+        .sc-title { font-weight: 800; color: #fff; font-size: 0.98em; }
+        .sc-body { font-size: 0.9em; color: var(--text-dim); line-height: 1.6; }
+
+        /* QUOTE BLOCK */
+        .quote-block {
+            border-left: 3px solid var(--mag);
+            padding: 18px 24px;
+            margin: 24px 0;
+            background: rgba(214,58,249,0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        .quote-block p { color: #c0a0d8; font-style: italic; margin: 0; }
+
+        /* PROGRESS BARS */
+        .progress-section { margin: 28px 0; }
+        .progress-item { margin-bottom: 18px; }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.88em;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .progress-label span { color: var(--mag); }
+        .progress-track {
+            height: 6px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--purp), var(--mag));
+        }
+
+        /* LINK */
+        a { color: var(--mag); text-decoration: none; font-weight: 700; border-bottom: 1px solid rgba(214,58,249,0.3); }
+        a:hover { border-color: var(--mag); }
+
+        /* FOOTER */
+        footer {
+            background: #080310;
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+        }
+        .footer-gradient {
+            font-size: 1.3em;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--mag), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        footer p { font-size: 0.88em; color: var(--text-dim); }
+    </style>
+</head>
+<body>
+
+    <div class="topbar"></div>
+
+    <header class="site-header">
+        <div class="site-logo">✦ Jenny Mod Guides</div>
+        <div class="site-tag">Roleplay &amp; Customization</div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-eyebrow">Roleplay Guide</div>
+        <h1>Best Ways to Customize Your Minecraft Roleplay with <span class="accent">Jenny Mod</span></h1>
+        <p class="hero-desc">Turn ordinary builds into narrative scenes with evolving dialogue, emotional arcs, and missions that shape your story.</p>
+        <div class="hero-pills">
+            <span class="pill">Character Spawns</span>
+            <span class="pill">World Building</span>
+            <span class="pill">Emotional Arcs</span>
+            <span class="pill">Evolving Dialogue</span>
+            <span class="pill">Custom Missions</span>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <!-- INTRO -->
+        <div class="glass">
+            <h2>
+                <span class="tag">Overview</span>
+                Jenny Mod as a Roleplay Tool
+            </h2>
+            <p>Most mods add items, blocks, or mechanics. <a href="https://jennymod.com.br/">Jenny mod</a> adds something harder to design: emotional context. Its characters remember choices, respond to player actions, and deliver dialogue that evolves across sessions. For roleplayers, this makes the mod one of the richest customisation tools in the Minecraft ecosystem.</p>
+            <p>This guide focuses on how to use those systems intentionally. By controlling where characters spawn, which worlds they inhabit, and how you interact with them, you can construct stories, relationships, and emotional arcs that feel personal rather than scripted. The key is treating the mod not as a collection of features to unlock but as a set of narrative building blocks.</p>
+            <div class="quote-block">
+                <p>"The best Jenny Mod roleplay sessions are the ones where the player feels like an author, not just an explorer."</p>
+            </div>
+        </div>
+
+        <!-- CATEGORIES -->
+        <div class="divider">
+            <span class="divider-icon">🎭</span>
+            <span class="divider-text">Roleplay Categories</span>
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="rp-grid">
+            <div class="rp-card">
+                <div class="rp-icon">📍</div>
+                <div class="rp-label">Spawn Control</div>
+                <div class="rp-desc">Decide where each character appears and how they relate to your builds.</div>
+            </div>
+            <div class="rp-card">
+                <div class="rp-icon">💬</div>
+                <div class="rp-label">Dialogue Shaping</div>
+                <div class="rp-desc">Choose responses that steer the relationship arc in the direction your story needs.</div>
+            </div>
+            <div class="rp-card">
+                <div class="rp-icon">🏗</div>
+                <div class="rp-label">World Design</div>
+                <div class="rp-desc">Build environments that give characters a sense of place and narrative logic.</div>
+            </div>
+            <div class="rp-card">
+                <div class="rp-icon">📖</div>
+                <div class="rp-label">Arc Planning</div>
+                <div class="rp-desc">Sketch the emotional journey before you play so each session advances the story.</div>
+            </div>
+        </div>
+
+        <!-- TECHNIQUES -->
+        <div class="glass">
+            <h2>
+                <span class="tag">Customisation Techniques</span>
+                How to Shape Your Roleplay
+            </h2>
+            <div class="technique-list">
+                <div class="technique">
+                    <div class="tech-num">1</div>
+                    <div class="tech-body">
+                        <div class="tech-title">Control Character Spawns by World Design</div>
+                        <div class="tech-desc">Build specific structures — cottages, libraries, market stalls — and configure character spawn points to match them. A character placed inside a building you designed feels like a resident, not a randomly generated NPC. This single step transforms the visual coherence of your roleplay world.</div>
+                    </div>
+                </div>
+                <div class="technique">
+                    <div class="tech-num">2</div>
+                    <div class="tech-body">
+                        <div class="tech-title">Use Separate Worlds for Separate Story Arcs</div>
+                        <div class="tech-desc">Create distinct world saves for different narrative timelines. One world might follow a lighthearted friendship arc, another a tension-filled rivalry. Keeping arcs separate prevents story threads from tangling and gives each world a clear identity.</div>
+                    </div>
+                </div>
+                <div class="technique">
+                    <div class="tech-num">3</div>
+                    <div class="tech-body">
+                        <div class="tech-title">Treat Dialogue Choices as Story Decisions</div>
+                        <div class="tech-desc">Jenny Mod's dialogue system responds to what you pick. Approach every conversation as a character choice rather than a menu navigation. Consistent choices build a persona for your player character and make the evolving dialogue feel earned rather than arbitrary.</div>
+                    </div>
+                </div>
+                <div class="technique">
+                    <div class="tech-num">4</div>
+                    <div class="tech-body">
+                        <div class="tech-title">Design Emotional Arc Milestones</div>
+                        <div class="tech-desc">Map out three to five story beats before you start playing — introduction, conflict, reconciliation, for example. Use in-game markers like completed builds or in-game day counts to signal when you have reached a beat. Structure prevents stories from stalling.</div>
+                    </div>
+                </div>
+                <div class="technique">
+                    <div class="tech-num">5</div>
+                    <div class="tech-body">
+                        <div class="tech-title">Layer Missions onto Existing Gameplay</div>
+                        <div class="tech-desc">Assign in-world meaning to standard Minecraft tasks. A mining trip becomes a quest for a character; a farm becomes a gift-gathering mission. Layering narrative intent onto everyday actions makes sessions feel purposeful from start to finish.</div>
+                    </div>
+                </div>
+                <div class="technique">
+                    <div class="tech-num">6</div>
+                    <div class="tech-body">
+                        <div class="tech-title">Build Environments That Reflect the Relationship</div>
+                        <div class="tech-desc">Update the spaces characters inhabit as the story progresses. A cluttered workshop becoming a tidy shared home tells a visual story even without dialogue. Environmental storytelling is one of Minecraft's strongest native tools and pairs naturally with Jenny Mod's narrative depth.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCENARIOS -->
+        <div class="divider">
+            <span class="divider-icon">🌍</span>
+            <span class="divider-text">Example Scenarios</span>
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="scenario-row">
+            <div class="scenario-card">
+                <div class="sc-header">
+                    <span class="sc-icon">🏡</span>
+                    <span class="sc-title">Village Co-Builder Arc</span>
+                </div>
+                <div class="sc-body">Start with Jenny spawned in a single house. Each session, expand the village by one building. The emotional arc is a growing community — from isolation to connection. Dialogue choices steer whether the relationship stays professional or becomes friendship.</div>
+            </div>
+            <div class="scenario-card">
+                <div class="sc-header">
+                    <span class="sc-icon">⚔️</span>
+                    <span class="sc-title">Rival to Ally Arc</span>
+                </div>
+                <div class="sc-body">Begin with adversarial dialogue choices to establish tension. Build a separate base for each character. The arc resolves when both characters share a resource — a farm, a mine — built cooperatively through late-game missions.</div>
+            </div>
+            <div class="scenario-card">
+                <div class="sc-header">
+                    <span class="sc-icon">🌿</span>
+                    <span class="sc-title">Traveller's Journal Arc</span>
+                </div>
+                <div class="sc-body">Each play session is a new location. Characters spawn in temporary camps rather than permanent homes. The story is a journey — each biome a chapter — with dialogue reflecting how far the characters have come from where they started.</div>
+            </div>
+            <div class="scenario-card">
+                <div class="sc-header">
+                    <span class="sc-icon">🔥</span>
+                    <span class="sc-title">Nether Expedition Arc</span>
+                </div>
+                <div class="sc-body">Use the overworld arcs as backstory and treat the Nether zone as the story's climax. Build a preparation montage into the overworld sessions — gathering, training — so the Nether entry feels like a true dramatic turning point.</div>
+            </div>
+        </div>
+
+        <!-- DEPTH RATINGS -->
+        <div class="glass">
+            <h2>
+                <span class="tag">Customisation Depth</span>
+                How Deep Can You Go?
+            </h2>
+            <p>Jenny Mod's roleplay toolkit operates at several levels of complexity. Here is an honest assessment of how much customisation each layer offers, from casual play to dedicated story craft.</p>
+            <div class="progress-section">
+                <div class="progress-item">
+                    <div class="progress-label">Dialogue Customisation <span>Very High</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">Spawn &amp; World Control <span>High</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 78%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">Emotional Arc Depth <span>High</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 82%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">Mission Layering <span>Medium</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label">Environmental Storytelling <span>Very High</span></div>
+                    <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+                </div>
+            </div>
+            <p>The most powerful layer is environmental storytelling because it costs nothing extra — it is built into how Minecraft works. Combine it with intentional dialogue choices and deliberate arc planning, and <a href="https://jennymod.com.br/">jenny mod</a> delivers a roleplay experience that few other mods in any category can match for emotional depth and narrative flexibility.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-gradient">Jenny Mod Roleplay Guide</div>
+        <p>&copy; 2026 Minecraft Mod Roleplay Guides &nbsp;|&nbsp; Reference: <a href="https://jennymod.com.br/">jennymod.com.br</a></p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Best Ways to Customize Your Minecraft Roleplay with Jenny Mod",
+        "description": "Discover the best ways to customize your Minecraft roleplay with Jenny Mod — from character spawns and world design to emotional arcs and evolving dialogue missions.",
+        "author": { "@type": "Organization", "@name": "Minecraft Mod Roleplay Guides" },
+        "publisher": { "@type": "Organization", "@name": "Minecraft Mod Roleplay Guides", "logo": { "@type": "ImageObject", "url": "https://example.com/logo.png" } },
+        "datePublished": "2026-01-01",
+        "dateModified": "2026-07-16"
+    }
+    </script>
+    <script>
+        const canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        canonicalLink.href = window.location.href;
+        document.head.appendChild(canonicalLink);
+    </script>
+</body>
+</html>
